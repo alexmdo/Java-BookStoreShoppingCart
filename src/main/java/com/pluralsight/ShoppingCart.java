@@ -64,5 +64,15 @@ public class ShoppingCart {
 			throw new RuntimeException("Error while deleting itens from ShoppingCart: " + e.getMessage(), e);
 		}
 	}
+	
+	public void updateCartItem(int index, int quantity) {
+		try {
+			CartItem cartItem = this.cartItems.get(index);
+			cartItem.setQuantity(quantity);	
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("Error while updating itens in ShoppingCart: " + e.getMessage(), e);
+		}
+	}
 
 }
