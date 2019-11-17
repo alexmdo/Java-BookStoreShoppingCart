@@ -55,5 +55,14 @@ public class ShoppingCart {
 		}
 		setOrderTotal(dblTotal);
 	}
+	
+	public void deleteCartItem(int index) {
+		try {
+			this.cartItems.remove(index);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("Error while deleting itens from ShoppingCart: " + e.getMessage(), e);
+		}
+	}
 
 }
